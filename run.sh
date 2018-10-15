@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apk --no-cache add tzdata && \ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \ echo "Asia/Shanghai" > /etc/timezone 
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone 
 
 sed -i "s/%master-ip%/${REDIS_MASTER_IP}/" /app/data/etc/redis.conf
 sed -i "s/%master-port%/{REDIS_MASTER_PORT}/" /app/data/etc/redis.conf
